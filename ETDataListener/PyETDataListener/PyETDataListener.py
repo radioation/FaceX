@@ -16,8 +16,8 @@ sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq)
 
 
 while True: 
-    data = sock.recvfrom(4096)
+    receiveBytes = sock.recvfrom(4096)
 
-    print('Read %s bytes' % (len(data) ))
-    print(data)
+    print('Read %s bytes' % (len(receiveBytes) ))
+    fileTime = int.from_bytes( receiveBytes, "little" );
      
