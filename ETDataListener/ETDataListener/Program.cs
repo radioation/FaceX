@@ -27,7 +27,7 @@ namespace ETDataListener
             {
                 // make output file
                 StreamWriter outFile = new StreamWriter("eye_tracking.csv");
-                outFile.WriteLine("timestamp,Name,ObjectIntersectionName,IntersectionIndex,ObjectIntersectionX,ObjectIntersectionY,HeadPoxX,HeadPosY,HeadPosZ,LeftGazeOriginX,LeftGazeOriginY,LeftGazeOriginZ,LeftGazeDirectionX,LeftGazeDirectionY,LeftGazeDirectionZ,RightGazeOriginX,RightGazeOriginY,RightGazeOriginZ,RightGazeDirectionX,RightGazeDirectionY,RightGazeDirectionZ,LeftGazeType,RightGazeType,HeadX,HeadY,HeadZ,HeadDirectionX,HeadDirectionY,HeadDirectionZ");
+                outFile.WriteLine("timestamp,Name,ObjectIntersectionName,IntersectionIndex,ObjectIntersectionX,ObjectIntersectionY,HeadPosX,HeadPosY,HeadPosZ,LeftGazeOriginX,LeftGazeOriginY,LeftGazeOriginZ,LeftGazeDirectionX,LeftGazeDirectionY,LeftGazeDirectionZ,RightGazeOriginX,RightGazeOriginY,RightGazeOriginZ,RightGazeDirectionX,RightGazeDirectionY,RightGazeDirectionZ,LeftGazeType,RightGazeType,HeadX,HeadY,HeadZ,HeadDirectionX,HeadDirectionY,HeadDirectionZ");
                 Console.WriteLine("Attempting to join multicast group {0}", GroupAddress.ToString());
                 receivingUdpClient.JoinMulticastGroup(GroupAddress);
 
