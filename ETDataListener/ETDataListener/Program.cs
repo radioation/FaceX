@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using System.Net;
 using System.Net.Sockets;
+using System.IO;
 
 namespace ETDataListener
 {
@@ -14,7 +15,7 @@ namespace ETDataListener
         static void Main(string[] args)
         {
             //Creates a UdpClient for reading incoming data.
-            UdpClient receivingUdpClient = new UdpClient(); 
+            UdpClient receivingUdpClient = new UdpClient();
             IPEndPoint RemoteIpEndPoint = new IPEndPoint(IPAddress.Any, 44511); // we're listening to port 44511
             receivingUdpClient.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
             receivingUdpClient.ExclusiveAddressUse = false;
@@ -24,7 +25,9 @@ namespace ETDataListener
             receivingUdpClient.Client.Bind(RemoteIpEndPoint);
             try
             {
-
+                // make output file
+                StreamWriter outFile = new StreamWriter("eye_tracking.csv");
+                outFile.WriteLine("timestamp,Name,ObjectIntersectionName,IntersectionIndex,ObjectIntersectionX,ObjectIntersectionY,HeadPoxX,HeadPosY,HeadPosZ,LeftGazeOriginX,LeftGazeOriginY,LeftGazeOriginZ,LeftGazeDirectionX,LeftGazeDirectionY,LeftGazeDirectionZ,RightGazeOriginX,RightGazeOriginY,RightGazeOriginZ,RightGazeDirectionX,RightGazeDirectionY,RightGazeDirectionZ,LeftGazeType,RightGazeType,HeadX,HeadY,HeadZ,HeadDirectionX,HeadDirectionY,HeadDirectionZ");
                 Console.WriteLine("Attempting to join multicast group {0}", GroupAddress.ToString());
                 receivingUdpClient.JoinMulticastGroup(GroupAddress);
 
@@ -112,6 +115,7 @@ namespace ETDataListener
 
 
                     Console.WriteLine("Filetime: {0} ObjectIntersectionX:{1} ObjectIntersectionY:{2} objectName: {3}", fileTime, ObjectIntersectionX, ObjectIntersectionY, ObjectIntersectionName);
+                    outFile.WriteLine($"{fileTime},{Name},{ObjectIntersectionName},{IntersectionIndex},{ObjectIntersectionX},{ObjectIntersectionY},{HeadPosX},{HeadPosY},{HeadPosZ},{LeftGazeOriginX},{LeftGazeOriginY},{LeftGazeOriginZ},{LeftGazeDirectionX},{LeftGazeDirectionY},{LeftGazeDirectionZ},{RightGazeOriginX},{RightGazeOriginY},{RightGazeOriginZ},{RightGazeDirectionX},{RightGazeDirectionY},{RightGazeDirectionZ},{LeftGazeType},{RightGazeType},{HeadX},{HeadY},{HeadZ},{HeadDirectionX},{HeadDirectionY},{HeadDirectionZ}");
 
                 }
 
