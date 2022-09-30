@@ -96,7 +96,8 @@ while True:
     offset += 4
      
 
-    print(fileTime, name, ObjectIntersectionName,IntersectionIndex,ObjectIntersectionX,ObjectIntersectionY,HeadPosX,HeadPosY,HeadPosZ,LeftGazeOriginX,LeftGazeOriginY,LeftGazeOriginZ,LeftGazeDirectionX,LeftGazeDirectionY,LeftGazeDirectionZ,RightGazeOriginX,RightGazeOriginY,RightGazeOriginZ,RightGazeDirectionX,RightGazeDirectionY,RightGazeDirectionZ,LeftGazeType,RightGazeType,HeadX,HeadY,HeadZ,HeadDirectionX,HeadDirectionY,HeadDirectionZ); 
+    print(fileTime, name, ObjectIntersectionName,IntersectionIndex,ObjectIntersectionX,ObjectIntersectionY,HeadPosX,HeadPosY,HeadPosZ); 
+    # print(fileTime, name, ObjectIntersectionName,IntersectionIndex,ObjectIntersectionX,ObjectIntersectionY,HeadPosX,HeadPosY,HeadPosZ,LeftGazeOriginX,LeftGazeOriginY,LeftGazeOriginZ,LeftGazeDirectionX,LeftGazeDirectionY,LeftGazeDirectionZ,RightGazeOriginX,RightGazeOriginY,RightGazeOriginZ,RightGazeDirectionX,RightGazeDirectionY,RightGazeDirectionZ,LeftGazeType,RightGazeType,HeadX,HeadY,HeadZ,HeadDirectionX,HeadDirectionY,HeadDirectionZ); 
 
 
      

@@ -114,7 +114,7 @@ namespace ETDataListener
                     offset += sizeof(float);
 
 
-                    Console.WriteLine("Filetime: {0} ObjectIntersectionX:{1} ObjectIntersectionY:{2} objectName: {3}", fileTime, ObjectIntersectionX, ObjectIntersectionY, ObjectIntersectionName);
+                    Console.WriteLine("Filetime: {0} ObjectIntersectionX:{1} ObjectIntersectionY:{2} objectName:{3}, head pos: {4},{5},{6}", fileTime, ObjectIntersectionX, ObjectIntersectionY, ObjectIntersectionName,HeadPosX,HeadPosY, HeadPosZ);
                     outFile.WriteLine($"{fileTime},{Name},{ObjectIntersectionName},{IntersectionIndex},{ObjectIntersectionX},{ObjectIntersectionY},{HeadPosX},{HeadPosY},{HeadPosZ},{LeftGazeOriginX},{LeftGazeOriginY},{LeftGazeOriginZ},{LeftGazeDirectionX},{LeftGazeDirectionY},{LeftGazeDirectionZ},{RightGazeOriginX},{RightGazeOriginY},{RightGazeOriginZ},{RightGazeDirectionX},{RightGazeDirectionY},{RightGazeDirectionZ},{LeftGazeType},{RightGazeType},{HeadX},{HeadY},{HeadZ},{HeadDirectionX},{HeadDirectionY},{HeadDirectionZ}");
 
                 }
