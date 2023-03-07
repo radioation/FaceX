@@ -26,10 +26,7 @@ namespace ETDataListener
             receivingUdpClient.Client.Bind(RemoteIpEndPoint);
             try
             {
-                // make output file
-                StreamWriter outFile = new StreamWriter("eye_tracking.csv");
-                outFile.WriteLine("timestamp,Name,ObjectIntersectionName,IntersectionIndex,ObjectIntersectionX,ObjectIntersectionY,HeadPosX,HeadPosY,HeadPosZ,LeftGazeOriginX,LeftGazeOriginY,LeftGazeOriginZ,LeftGazeDirectionX,LeftGazeDirectionY,LeftGazeDirectionZ,RightGazeOriginX,RightGazeOriginY,RightGazeOriginZ,RightGazeDirectionX,RightGazeDirectionY,RightGazeDirectionZ,LeftGazeType,RightGazeType,HeadX,HeadY,HeadZ,HeadDirectionX,HeadDirectionY,HeadDirectionZ");
-                Console.WriteLine("Attempting to join multicast group {0}", GroupAddress.ToString());
+               Console.WriteLine("Attempting to join multicast group {0}", GroupAddress.ToString());
                 receivingUdpClient.JoinMulticastGroup(GroupAddress);
 
                 Console.WriteLine("listening for retransmitted eye tracking data. Press 'ESC' key to quit.");
@@ -56,12 +53,15 @@ namespace ETDataListener
                     offset += sizeof(float);
 
 
-                    // set mouse position based on object intersection (bad idea solely)
-                    System.Drawing.Point screenPos = System.Windows.Forms.Cursor.Position;
-                    System.Drawing.Point leftTop = new System.Drawing.Point((int)ObjectIntersectionX, (int)ObjectIntersectionY);
+                    // set mouse position based on object intersection
+                    if( ObjectIntersectionX > 0 && ObjectIntersectionY > 0 )
+                    {
+                        System.Drawing.Point screenPos = System.Windows.Forms.Cursor.Position;
+                        System.Drawing.Point leftTop = new System.Drawing.Point((int)ObjectIntersectionX, (int)ObjectIntersectionY);
 
-                    Cursor.Position = leftTop;
-                    Console.WriteLine(screenPos);
+                        Cursor.Position = leftTop;
+                        Console.WriteLine(screenPos);
+                    }
                 }
 
             }
