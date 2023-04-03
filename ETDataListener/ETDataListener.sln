@@ -9,6 +9,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PyETDataListener", "PyETDat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EyeMouseTest", "EyeMouseTest\EyeMouseTest.csproj", "{7B04FEFD-9B10-44EB-BE8C-29750DF832F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSONDataListener", "JSONDataListener\JSONDataListener.csproj", "{DC318955-472B-4892-B1F6-E8A19D1068DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{7B04FEFD-9B10-44EB-BE8C-29750DF832F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B04FEFD-9B10-44EB-BE8C-29750DF832F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B04FEFD-9B10-44EB-BE8C-29750DF832F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC318955-472B-4892-B1F6-E8A19D1068DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC318955-472B-4892-B1F6-E8A19D1068DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC318955-472B-4892-B1F6-E8A19D1068DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC318955-472B-4892-B1F6-E8A19D1068DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
