@@ -50,8 +50,12 @@ namespace JSONDataListener
                             Console.WriteLine("Subject: " + subjectName);
                             Console.WriteLine("Timestamp: " + timestamp);
                             if (closest != null)
-                            {
-                                Console.WriteLine("Closest Intersection: " + closest.ToString());
+                            { 
+                                Console.WriteLine("Closest Intersection: ({0},{1}) name: {2} index: {3}",
+                                    closest.X,
+                                    closest.Y,
+                                    closest.object_name,
+                                    closest.ObjectIndex);
                             }
                         }
                     }
@@ -100,7 +104,7 @@ namespace JSONDataListener
     {
         public double X { get; set; }
         public double Y { get; set; }
-        public string ObjectName { get; set; }
+        public string object_name { get; set; }
         public int ObjectIndex { get; set; }
     }
     class FXPoint3D
