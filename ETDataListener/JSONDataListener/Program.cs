@@ -40,13 +40,20 @@ namespace JSONDataListener
                         // Extract the researcher name and x/y values
                         string subjectName = gazeData.Info.Subject;
                         string timestamp = gazeData.Timestamp;
-                        FXEyeIntersection closest = gazeData.Combined.ClosestIntersection;
+                        var combined = gazeData.Combined;
+                        if( combined != null )
+                        {
+                            FXEyeIntersection closest = gazeData.Combined.Closest;
 
 
-                        // Do something with the data
-                        Console.WriteLine("Subject: " + subjectName);
-                        Console.WriteLine("Timestamp: " + timestamp);
-                        Console.WriteLine("Closest Intersection: " + closest.ToString());
+                            // Do something with the data
+                            Console.WriteLine("Subject: " + subjectName);
+                            Console.WriteLine("Timestamp: " + timestamp);
+                            if (closest != null)
+                            {
+                                Console.WriteLine("Closest Intersection: " + closest.ToString());
+                            }
+                        }
                     }
                 }
             }
@@ -82,7 +89,7 @@ namespace JSONDataListener
     class FXEyeGazeIntersectionData
     {
         public bool Validity { get; set; }
-        public FXEyeIntersection ClosestIntersection { get; set; }
+        public FXEyeIntersection Closest { get; set; }
         public FXEyeIntersection[] AllIntersection { get; set; }
 
         public FXPoint3D Direction3d { get; set; }
